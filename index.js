@@ -126,7 +126,7 @@
      <div class="wrap" id="mutli-dialog">
   <div class="dialog">
     <div class="header">
-      <div class="title">批量添加权限</div>
+      <div class="title">批量添加权限 <a href="https://windliang.wang/" target="_blank">by windliang</a></div>
       <svg id="close-icon" class="close" width="18" height="18" viewBox="0 0 18 18"
         xmlns="http://www.w3.org/2000/svg">
         <path
