@@ -10,7 +10,7 @@ https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldm
 
 ![img](https://p0.meituan.net/voice/28ce63ca15877276ee8cc5fa5d0be03a37166.png)
 
-打不开的话我下了一个油猴脚本离线的包，可以从百度网盘下，链接: https://pan.baidu.com/s/1S0KmVvuoYGjul3l1XCh-mA;密码: 6bfd ，下载好后把文件拖到 Chrome 的扩展程序页面就自动安装了
+打不开的话我下了一个油猴脚本离线的包，可以从百度网盘下，链接: [https://pan.baidu.com/s/1S0KmVvuoYGjul3l1XCh-mA](https://pan.baidu.com/s/1S0KmVvuoYGjul3l1XCh-mA) 密码: 6bfd ，下载好后把文件拖到 Chrome 的扩展程序页面就自动安装了
 
 然后通过下边的链接安装公众号脚本：
 
@@ -28,4 +28,4 @@ https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldm
 
 有建议或者 `bug` 都可以添加我的微信交流：
 
-![](https://windliang.oss-cn-beijing.aliyuncs.com/wechat.jpg)
+<img src="https://windliang.oss-cn-beijing.aliyuncs.com/wechat.jpg" width=300></img>
