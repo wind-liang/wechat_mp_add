@@ -54,7 +54,13 @@
       return "";
     }
   };
+  const sleep = async (time) => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(), time);
+    });
+  };
   const addUsersList = async (userList, authType, inputNames) => {
+    const failList = [];
     const token = getToken();
     if (!token) {
       alert("获取 token 失败，可以联系 wx: liang_extraordinary 进行修复");
@@ -63,6 +69,7 @@
     inputNames.value = "开始添加...\n";
     let hasFailed = false;
     for (const user of userList) {
+      await sleep(2000);
       const searchBody = {
         username: user,
         id: "",
@@ -84,6 +91,7 @@
       if (!addUser) {
         inputNames.value += `${user}❌ `;
         hasFailed = true;
+        failList.push(user);
         continue;
       }
       const addBody = {
@@ -116,7 +124,13 @@
       } else {
         inputNames.value += `${user}❌ `;
         hasFailed = true;
+        failList.push(user);
       }
+    }
+    if (hasFailed) {
+      inputNames.value =
+        `失败的名单：（请复制后重新添加）\n${failList.join(",")}\n` +
+        inputNames.value;
     }
     return !hasFailed;
   };
@@ -138,7 +152,7 @@
       <div class="names">
         <div class="label">公众号名称：</div>
         <div class="input">
-          <textarea id="input-names" placeholder="输入公众号名称，以逗号分隔" rows="6" cols="40" style="width: 99%; resize:none;"
+          <textarea id="input-names" placeholder="输入公众号名称，以逗号分隔（公众号名称可能会添加失败，最好输入公众号的微信号）" rows="6" cols="40" style="width: 99%; resize:none;"
             ></textarea>
         </div>
       </div>
@@ -386,6 +400,7 @@
         muliDialog.hidden = true;
         const inputNames = document.getElementById("input-names");
         inputNames.value = "";
+        window.reloadPage();
       };
       const closeButton = document.getElementById("close-icon");
       closeButton.addEventListener("click", closeDialog, false);
@@ -394,6 +409,10 @@
 
       const confirmDialogClick = async () => {
         const inputNames = document.getElementById("input-names");
+        if (inputNames.value.startsWith("失败的名单：")) {
+          alert("请将失败的名单复制粘贴覆盖后再点确定");
+          return;
+        }
         if (!inputNames.value) {
           alert("请至少输入一个公众号");
           return;
