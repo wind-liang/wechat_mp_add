@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         微信公众号批量添加转载白名单
+// @name         微信公众号批量添加全局可转载账号
 // @namespace    https://windliang.wang/
-// @version      1.0
+// @version      1.2
 // @description  微信公众号批量添加转载白名单
 // @author       windliang
 // @match        https://mp.weixin.qq.com/cgi-bin/*
