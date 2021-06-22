@@ -24,6 +24,12 @@ https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldm
 
 ![](https://windliangblog.oss-cn-beijing.aliyuncs.com/mp2.jpg)
 
+ps：当天添加过多公众号后可能导致无法通过公众号名称进行添加，只能通过公众号的微信号进行添加，第二天就会恢复。
+
+# 开发心路历程
+
+[点击这里](https://windliang.wang/2021/06/21/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80%E5%8F%AF%E8%BD%AC%E8%BD%BD%E8%B4%A6%E5%8F%B7/)
+
 # 问题反馈
 
 有建议或者 `bug` 都可以添加我的微信交流：
