@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         微信公众号批量添加全局可转载账号
 // @namespace    https://windliang.wang/
-// @version      1.2
+// @version      1.3
 // @description  微信公众号批量添加转载白名单
 // @author       windliang
 // @match        https://mp.weixin.qq.com/cgi-bin/*
@@ -69,7 +69,6 @@
     inputNames.value = "开始添加...\n";
     let hasFailed = false;
     for (const user of userList) {
-      await sleep(2000);
       const searchBody = {
         username: user,
         id: "",
@@ -84,6 +83,7 @@
         "https://mp.weixin.qq.com/cgi-bin/appmsgcopyright?action=searchacct",
         searchBody
       );
+      await sleep(2000);
       const addUser =
         searchRes.search_list &&
         searchRes.search_list.length &&
@@ -126,6 +126,7 @@
         hasFailed = true;
         failList.push(user);
       }
+      await sleep(1000);
     }
     if (hasFailed) {
       inputNames.value =
@@ -140,7 +141,7 @@
      <div class="wrap" id="mutli-dialog">
   <div class="dialog">
     <div class="header">
-      <div class="title">批量添加权限 <a href="https://windliang.wang/" target="_blank">by windliang</a></div>
+      <div class="title">批量添加权限 <a href="https://windliang.wang/2021/06/21/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80%E5%8F%AF%E8%BD%AC%E8%BD%BD%E8%B4%A6%E5%8F%B7/" target="_blank">by windliang</a></div>
       <svg id="close-icon" class="close" width="18" height="18" viewBox="0 0 18 18"
         xmlns="http://www.w3.org/2000/svg">
         <path
@@ -437,7 +438,7 @@
           muliDialog.hidden = true;
           window.reloadPage();
         } else {
-          alert("存在失败的公众号，请检查");
+          alert("存在失败的公众号，请检查（可能通过公众号名称未搜索到）");
         }
       };
 
